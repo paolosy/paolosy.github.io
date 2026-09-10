@@ -174,6 +174,11 @@ section {
   transition: color 0.25s ease, padding-left 0.25s ease, color 0.6s ease;
 }
 
+.social-list a .label {
+  color: var(--text-dim);
+  transition: color 0.6s ease;
+}
+
 .social-list a span.handle {
   color: var(--text-dim);
   font-size: 0.95rem;
@@ -186,6 +191,7 @@ section {
   padding-left: 0.5rem;
 }
 
+.social-list a:hover .label,
 .social-list a:hover span.handle {
   color: var(--accent);
 }
