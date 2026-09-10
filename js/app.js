@@ -42,3 +42,22 @@ entries.forEach(entry => {
 }, { threshold: 0.4 });
 
 document.querySelectorAll('#hero, #about, #gamer-tags, #socials').forEach(sec => observer.observe(sec));
+
+// Copy handle to clipboard for gamer tags
+document.querySelectorAll('#gamer-tags .social-list a').forEach(link => {
+    link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const handle = link.querySelector('.text-to-copy').textContent;
+        navigator.clipboard.writeText(handle).then(() => {
+            const icon = link.querySelector('.copy-icon');
+            if (icon) {
+                const originalHtml = icon.innerHTML;
+                // Temporarily show a checkmark to indicate successful copy
+                icon.innerHTML = '<polyline points="20 6 9 17 4 12"></polyline>';
+                setTimeout(() => {
+                    icon.innerHTML = originalHtml;
+                }, 1500);
+            }
+        });
+    });
+});

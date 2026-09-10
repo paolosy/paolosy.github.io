@@ -157,6 +157,21 @@ section {
   color: var(--accent);
 }
 
+#gamer-tags .social-list .handle-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+#gamer-tags .social-list a span.text-to-copy {
+  display: none;
+}
+
+#gamer-tags .social-list a:hover .copy-icon {
+  opacity: 1 !important;
+  color: var(--accent);
+}
+
 .section-number {
   position: absolute;
   top: 8vh;
