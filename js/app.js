@@ -32,11 +32,20 @@ function playSection(section) {
     }, dur - 200);
 }
 
-// Trigger on scroll into view, every time, for all three sections
+// Trigger on scroll into view, every time, for all sections
 const observer = new IntersectionObserver((entries) => {
 entries.forEach(entry => {
     if (entry.isIntersecting) {
-    playSection(entry.target);
+        // Switch page body theme based on active section class
+        if (entry.target.classList.contains('theme-light')) {
+            document.body.classList.remove('theme-dark');
+            document.body.classList.add('theme-light');
+        } else if (entry.target.classList.contains('theme-dark')) {
+            document.body.classList.remove('theme-light');
+            document.body.classList.add('theme-dark');
+        }
+
+        playSection(entry.target);
     }
 });
 }, { threshold: 0.4 });
