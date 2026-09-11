@@ -1,7 +1,7 @@
 :root {
   --bg-dark: #0e0f12;
   --bg-raised-dark: #15171c;
-  --text-dark: #edeff0;
+  --text-dark: #ccc; /* #edeff0; */
   --text-dim-dark: #8b909c;
   --line-dark: #24262d;
 
@@ -82,7 +82,7 @@ section {
 
 .headline {
   font-family: var(--display-font);
-  font-weight: 900;
+  font-weight: 800;
   letter-spacing: -0.03em;
   line-height: 0.9;
   font-size: clamp(4rem, 15vw, 11rem);
@@ -91,6 +91,7 @@ section {
   display: flex;
   flex-wrap: wrap;
   transition: color 0.6s ease;
+  text-transform: uppercase;
 }
 
 .headline .char {
@@ -114,11 +115,12 @@ section {
 .body-copy {
   max-width: none;
   width: 100%;
-  font-size: 1.05rem;
+  font-size: clamp(1.05rem, 2vw, 1.5rem);
   line-height: 1.75;
   color: var(--text-dim);
   opacity: 0;
   transform: translateY(16px);
+  font-weight: 350;
 }
 
 .body-copy.in {
@@ -170,7 +172,9 @@ section {
   padding: 1.1rem 0;
   color: var(--text);
   text-decoration: none;
-  font-size: 1.15rem;
+  /* font-size: 1.15rem; */
+  font-size: clamp(1.05rem, 2vw, 1.3rem);
+  font-weight: 350;
   transition: color 0.25s ease, padding-left 0.25s ease, color 0.6s ease;
 }
 
@@ -181,7 +185,8 @@ section {
 
 .social-list a span.handle {
   color: var(--text-dim);
-  font-size: 0.95rem;
+  /* font-size: 0.95rem; */
+  font-size: clamp(1.05rem, 2vw, 1.3rem);
   font-family: 'SF Mono', 'Consolas', monospace;
   transition: color 0.6s ease;
 }
