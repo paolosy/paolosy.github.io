@@ -1,0 +1,26 @@
+{
+  "name": "site",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "tailwindcss -i css/input.css -o css/style.css --watch",
+    "build:css": "tailwindcss -i css/input.css -o css/style.css --minify"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/paolosy/paolosy.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/paolosy/paolosy.github.io/issues"
+  },
+  "homepage": "https://github.com/paolosy/paolosy.github.io#readme",
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.3.3",
+    "tailwindcss": "^4.3.3"
+  }
+}

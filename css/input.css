@@ -1,0 +1,83 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg-dark: #0e0f12;
+  --color-bg-raised-dark: #15171c;
+  --color-text-dark: #ccc;
+  --color-text-dim-dark: #8b909c;
+  --color-line-dark: #24262d;
+
+  --color-bg-light: #f8f9fa;
+  --color-bg-raised-light: #e9ecef;
+  --color-text-light: #121316;
+  --color-text-dim-light: #5a606e;
+  --color-line-light: #e2e4e8;
+
+  --color-accent: #7b6cd9;
+  --font-display: 'Archivo', 'Arial Narrow', sans-serif;
+  --font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  --font-mono: 'SF Mono', 'Consolas', monospace;
+}
+
+@font-face {
+  font-family: 'Archivo';
+  src: local('Archivo Black');
+}
+
+:root {
+  --bg: #0e0f12;
+  --bg-raised: #15171c;
+  --text: #ccc;
+  --text-dim: #8b909c;
+  --accent: #7b6cd9;
+  --line: #24262d;
+}
+
+body.theme-light {
+  --bg: #f8f9fa;
+  --bg-raised: #e9ecef;
+  --text: #121316;
+  --text-dim: #5a606e;
+  --line: #e2e4e8;
+}
+
+body.theme-dark {
+  --bg: #0e0f12;
+  --bg-raised: #15171c;
+  --text: #ccc;
+  --text-dim: #8b909c;
+  --line: #24262d;
+}
+
+/* Character entry animation for dynamic headline */
+.headline .char {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(0.6em);
+  animation: rise 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.headline .char.space {
+  width: 0.3em;
+}
+
+@keyframes rise {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Fade up animation states for JS playSection */
+.body-copy,
+.social-list {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.body-copy.in,
+.social-list.in {
+  opacity: 1;
+  transform: translateY(0);
+}
